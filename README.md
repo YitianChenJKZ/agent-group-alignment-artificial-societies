@@ -12,13 +12,13 @@ numerical claim in the PDFs can be re-derived from this repository.
 ## Contents
 
 ```
-agent-based modelling/
+agent-based-modelling/
     paper.tex / paper.pdf                     Agent Based Modeling for Group Alignment
     references.bib                            15 references
     hypotheses_numerical_simulation.ipynb     all four figures
     figures/                                  hypothesis_1...3, hypothesis_3_solution
 
-principal-agent problem framework/
+principal-agent-problem-framework/
     paper.tex / paper.pdf                     Group Alignment through the Principal-Agent Lens
     group-alignment-numerical-simulation.ipynb   all three figures
     figures/                                  fig1..fig3
@@ -112,10 +112,10 @@ takes a while.
 ## Building the papers
 
 ```bash
-cd "agent-based modelling"
+cd "agent-based-modelling"
 pdflatex paper.tex && bibtex paper && pdflatex paper.tex && pdflatex paper.tex
 
-cd "../principal-agent problem framework"
+cd "../principal-agent-problem-framework"
 pdflatex paper.tex && pdflatex paper.tex
 ```
 
@@ -136,7 +136,7 @@ their own `figures/` directory.
 @misc{chen2026pa,
   author = {Chen, Yitian},
   title  = {AI Agent Group Alignment through the Lens of
-            Principal-Agent Problem Framework},
+            principal-agent-problem-framework},
   year   = {2026},
   note   = {Artificial Societies, University of Cambridge}
 }
