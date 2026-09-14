@@ -19,8 +19,9 @@ Three hypotheses are tested against closed-form predictions:
 2. Fast-origin information crowds out slow-origin information
 3. Raising P_sf, so fast agents consult slow agents more, restores C = 1 for limited rho.
 
-Files: abm_group_alignment.tex, appendix.tex, abm_group_alignment.pdf,
-hypo1+hypo2.ipynb, hypo3.ipynb, Figures/
+Files:
+- ABM files: agent-based modelling/paper.tex, paper.pdf, references.bib, hypotheses_numerical_simulation.ipynb, figures/
+- Principal-agent files: principal-agent problem framework/paper.tex, paper.pdf, group-alignment-numerical-simulation.ipynb, figures/
 
 ### AI Agent Group Alignment through the Lens of Principal-Agent Problem Framework
 
@@ -30,21 +31,15 @@ Files: Principal-Agent Group Alignment/
 
 ## Running the notebooks
 
-```
-python3 -m venv .venv
-source .venv/bin/activate
-pip install numpy matplotlib joblib jupyter
-jupyter notebook
-```
+Install: pip install -r requirements.txt
 
-Every simulation uses a seeded random number generator, so the figures reproduce exactly.
-hypo3.ipynb runs a few hundred seeds per parameter point in parallel through joblib and takes
-a while.
 
 ## Building the papers
 
-```
-pdflatex abm_group_alignment.tex
-```
+cd "agent-based modelling"
+rm -f paper.aux paper.bbl paper.blg paper.log paper.out
+pdflatex paper.tex && bibtex paper && pdflatex paper.tex && pdflatex paper.tex
 
-Figures are read from Figures/.
+cd "../principal-agent problem framework"
+rm -f paper.aux paper.log paper.out
+pdflatex paper.tex && pdflatex paper.tex
